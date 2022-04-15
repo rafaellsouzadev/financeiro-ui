@@ -1,0 +1,105 @@
+<div class="container">
+  <form #pessoaForm="ngForm" autocomplete="off" (ngSubmit)="salvar(pessoaForm)">
+    <div class="grid">
+
+      <div class="col-12">
+        <h1>Nova Pessoa</h1>
+      </div>
+
+
+      <div class="col-12 p-fluid md:col-12">
+        <label>Nome</label>
+        <input type="text" pInputText name="nome" #nome="ngModel" ngModel [(ngModel)]="pessoa.nome" required minlength="5">
+
+
+        <app-message [control]="nome.control" error="required" text="Informe um nome"></app-message>
+        <app-message [control]="nome.control" error="minlength"
+          text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} caracteres."></app-message>
+
+      </div>
+
+      <div class="col-12 md:col-9 p-fluid">
+        <label>Logradouro</label>
+        <input type="text" pInputText name="logradouro" ngModel #logradouro="ngModel" [(ngModel)]="pessoa.logradouro"
+          required minlength="5">
+
+        <app-message [control]="logradouro.control" error="required" text="Informe um logradouro"></app-message>
+        <app-message [control]="logradouro.control" error="minlength"
+          text="Mínimo de {{ logradouro.errors?.minlength?.requiredLength }} caracteres."></app-message>
+
+      </div>
+
+      <div class="col-12 md:col-3 p-fluid">
+        <label>Número</label>
+        <input type="text" pInputText name="numero" ngModel #numero="ngModel" [(ngModel)]="pessoa.numero" required>
+
+        <app-message [control]="numero.control" error="required" text="Informe um número"></app-message>
+
+      </div>
+
+      <div class="col-12 md:col-4 p-fluid">
+        <label>Complemento</label>
+        <input type="text" pInputText name="complemento" ngModel #complemento="ngModel"
+          [(ngModel)]="pessoa.complemento">
+      </div>
+
+      <div class="col-12 md:col-4 p-fluid">
+        <label>Bairro</label>
+        <input type="text" pInputText name="bairro" ngModel #bairro="ngModel" required minlength="3"
+          [(ngModel)]="pessoa.bairro">
+
+        <app-message [control]="bairro.control" error="required" text="Informe o bairro"></app-message>
+        <app-message [control]="bairro.control" error="minlength"
+          text="Mínimo de {{ bairro.errors?.minlength?.requiredLength }} caracteres."></app-message>
+
+      </div>
+
+      <div class="col-12 md:col-4 p-fluid">
+        <label>CEP</label>
+        <p-inputMask mask="99.999-999" name="cep" ngModel #cep="ngModel" [required]="true"
+          [(ngModel)]="pessoa.cep"></p-inputMask>
+
+
+        <app-message [control]="cep.control" error="required" text="Informe o CEP"></app-message>
+        <app-message [control]="cep.control" error="minlength"
+          text="Mínimo de {{ cep.errors?.minlength?.requiredLength }} caracteres."></app-message>
+
+      </div>
+
+      <div class="col-12 md:col-6 p-fluid">
+        <label>Cidade</label>
+        <input type="text" pInputText name="cidade" ngModel #cidade="ngModel" [(ngModel)]="pessoa.cidade" required
+          minlength="5">
+
+
+        <app-message [control]="cidade.control" error="required" text="Informe a cidade"></app-message>
+        <app-message [control]="cidade.control" error="minlength"
+          text="Mínimo de {{ cidade.errors?.minlength?.requiredLength }} caracteres."></app-message>
+
+      </div>
+
+      <div class="col-12 md:col-6 p-fluid">
+        <label>Estado</label>
+        <input type="text" pInputText name="estado" ngModel #estado="ngModel" [(ngModel)]="pessoa.estado" required
+          minlength="3">
+
+
+        <app-message [control]="estado.control" error="required" text="Informe o estado"></app-message>
+        <app-message [control]="estado.control" error="minlength"
+          text="Mínimo de {{ estado.errors?.minlength?.requiredLength }} caracteres."></app-message>
+
+      </div>
+
+
+      <div class="col-12">
+        <button pButton type="submit" label="Salvar" icon="pi pi-check" iconPos="left"
+          [disabled]="pessoaForm.invalid"></button>
+        <button pButton type="submit" label="Novo" class="p-button-info ml-2" icon="pi pi-user-plus"></button>
+        <a class="ml-2" routerLink="/pessoas">Voltar para a pesquisa</a>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

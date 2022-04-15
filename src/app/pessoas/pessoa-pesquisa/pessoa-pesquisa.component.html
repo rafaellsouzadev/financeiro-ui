@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h1>Pessoa</h1>
+    </div>
+
+    <form autocomplete="off" (ngSubmit)="pesquisar()">
+    <div class="p-col-12 p-fluid">
+      <label>Pessoa</label>
+      <input pInputText class="mt-1" type="text" name="pessoa" [(ngModel)]="filtro.nome">
+    </div>
+
+    <div class="p-col-12 mt-2">
+      <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+    </form>
+    <div class="p-grid mt-3">
+      <div class="p-col-12">
+        <app-pessoas-grid [pessoas]="pessoas"></app-pessoas-grid>
+      </div>
+    </div>
+
+    <div class="p-col-12 mt-3">
+      <a pButton label="Nova Pessoa" routerLink="/pessoas/novo"></a>
+    </div>
+
+  </div>
+
+</div>
