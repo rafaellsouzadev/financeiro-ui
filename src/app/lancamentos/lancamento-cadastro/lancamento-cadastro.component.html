@@ -62,7 +62,7 @@
 
       <div class="col-12">
         <button pButton type="submit" label="Salvar" icon="pi pi-check" iconPos="left" [disabled]="lancamentoForm.invalid"></button>
-        <button pButton type="button" label="Novo" class="p-button-info ml-2"></button>
+        <button pButton type="button" (click)="novo(lancamentoForm)" label="Novo" class="p-button-info ml-2"></button>
         <a class="ml-2" routerLink="/lancamentos">Voltar para a pesquisa</a>
       </div>
 

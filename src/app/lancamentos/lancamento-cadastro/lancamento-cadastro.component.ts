@@ -65,18 +65,18 @@ export class LancamentoCadastroComponent implements OnInit {
 
   carregarCategorias() {
     this.categoriaService.listarCategoria()
-    .then(categorias => {
-      this.categorias = categorias
-        .map((c:any) => ({ label: c.nome, value: c.id }));
+      .then(categorias => {
+        this.categorias = categorias
+          .map((c: any) => ({ label: c.nome, value: c.id }));
       })
       .catch((error) => this.erroHandler.handle(error));
   }
 
   carregarPessoas() {
     this.pessoaService.listarTodas()
-    .then(pessoas => {
-      this.pessoas = pessoas
-        .map((p:any) => ({ label: p.nome, value: p.id }));
+      .then(pessoas => {
+        this.pessoas = pessoas
+          .map((p: any) => ({ label: p.nome, value: p.id }));
       })
       .catch((error) => { this.erroHandler.handle(error) });
   }
@@ -105,12 +105,22 @@ export class LancamentoCadastroComponent implements OnInit {
 
   atualizarLancamento() {
     this.lancamentoService.atualizar(this.lancamento)
-    .then((lancamento:Lancamento) => {
-      Lancamento.toJson(lancamento)
-      this.lancamento = lancamento;        
+      .then((lancamento: Lancamento) => {
+        Lancamento.toJson(lancamento)
+        this.lancamento = lancamento;
         this.messageService.add({ severity: 'success', detail: 'Lançamento alterado com sucesso!' });
       })
       .catch(error => this.erroHandler.handle(error));
+  }
+
+  novo(lancamentoForm: NgForm) {
+    lancamentoForm.reset();
+
+    setTimeout(() => {
+      this.lancamento = new Lancamento();
+    }, 1);
+    
+    this.router.navigate(['/lancamentos/novo'])
   }
 
 }
