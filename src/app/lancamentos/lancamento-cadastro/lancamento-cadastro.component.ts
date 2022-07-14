@@ -85,15 +85,12 @@ export class LancamentoCadastroComponent implements OnInit {
   }
 
   salvar(form: NgForm) {
-    this.lancamentoService.adicionar(this.lancamento)
-      .then(() => {
-        this.messageService.add({ severity: 'success', detail: 'Lançamento adicionado com sucesso!' });
-
-        form.reset();
-        this.lancamento = new Lancamento();
-
-      })
-      .catch(erro => this.errorHandler.handle(erro));
+    if (this.editando) {
+      this.atualizarLancamento(form)
+    }
+    else {
+      this.adicionarLancamento(form)
+    }
   }
 
   adicionarLancamento(form: NgForm) {
@@ -101,16 +98,13 @@ export class LancamentoCadastroComponent implements OnInit {
       .then(() => {
         this.messageService.add({ severity: 'success', detail: 'Lançamento adicionado com sucesso!' });
 
-        //lancamentoForm.reset();
-        //this.lancamento = new Lancamento();
-
-        this.router.navigate(['/lancamentos'])
-
+        form.reset();
+        this.lancamento = new Lancamento();
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
 
-  atualizarLancamento() {
+  atualizarLancamento(form: NgForm) {
     this.lancamentoService.atualizar(this.lancamento)
       .subscribe((response: any) => {
 
