@@ -7,13 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { PessoasModule } from './pessoas/pessoas.module';
-import { CorModule } from './cor/cor.module';
+import { CorModule } from './core/cor.module';
 import { RouterModule, Routes } from '@angular/router';
 import { LancamentoPesquisaComponent } from './lancamentos/lancamento-pesquisa/lancamento-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamentos/lancamento-cadastro/lancamento-cadastro.component';
 import { PessoaPesquisaComponent } from './pessoas/pessoa-pesquisa/pessoa-pesquisa.component';
 import { PessoaCadastroComponent } from './pessoas/pessoa-cadastro/pessoa-cadastro.component';
-import { PaginaNaoEncontradaComponent } from './cor/pagina-nao-encontrada.component';
+import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
 
 
 const routes: Routes = [

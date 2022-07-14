@@ -3,7 +3,7 @@ import { pessoaFiltro, PessoaService } from '../pessoa.service';
 import { LazyLoadEvent, ConfirmationService, MessageService } from 'primeng/api';
 import { PessoaPesquisaComponent } from '../pessoa-pesquisa/pessoa-pesquisa.component';
 import { Table } from 'primeng/table';
-import { ErrorHandlerService } from '../../cor/error-handler.service';
+import { ErrorHandlerService } from '../../core/error-handler.service';
 
 
 @Component({

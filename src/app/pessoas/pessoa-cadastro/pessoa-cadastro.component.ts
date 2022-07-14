@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pessoa } from 'src/app/cor/model';
+import { Pessoa } from 'src/app/core/model';
 import { NgForm } from '@angular/forms';
 import { PessoaService } from '../pessoa.service';
-import { ErrorHandlerService } from '../../cor/error-handler.service';
+import { ErrorHandlerService } from '../../core/error-handler.service';
 import { MessageService } from 'primeng/api';
 
 @Component({

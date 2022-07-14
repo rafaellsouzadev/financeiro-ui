@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PessoaService, pessoaFiltro } from '../pessoa.service';
-import { ErrorHandlerService } from '../../cor/error-handler.service';
+import { ErrorHandlerService } from '../../core/error-handler.service';
 
 @Component({
   selector: 'app-pessoa-pesquisa',

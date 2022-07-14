@@ -3,7 +3,7 @@ import { LazyLoadEvent, MessageService, ConfirmationService } from 'primeng/api'
 import { LancamentoFiltro, LancamentoService } from '../lancamento.service';
 import { LancamentoPesquisaComponent } from '../lancamento-pesquisa/lancamento-pesquisa.component';
 import { Table } from 'primeng/table';
-import { ErrorHandlerService } from '../../cor/error-handler.service';
+import { ErrorHandlerService } from '../../core/error-handler.service';
 
 
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { Lancamento } from '../cor/model';
+import { Lancamento } from '../core/model';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
 

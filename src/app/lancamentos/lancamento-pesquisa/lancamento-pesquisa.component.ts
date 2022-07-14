@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ErrorHandlerService } from 'src/app/cor/error-handler.service';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
 
 

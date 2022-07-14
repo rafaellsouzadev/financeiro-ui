@@ -29,10 +29,7 @@ import { RouterModule } from '@angular/router';
     LancamentoPesquisaComponent,
     LancamentoGridComponent
   ],
-  exports: [
-    LancamentoCadastroComponent,
-    LancamentoPesquisaComponent
-  ],
+  exports: [ ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

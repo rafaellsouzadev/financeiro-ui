@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Pessoa } from '../cor/model';
+import { Pessoa } from '../core/model';
 
 export class pessoaFiltro {
   nome?: string;

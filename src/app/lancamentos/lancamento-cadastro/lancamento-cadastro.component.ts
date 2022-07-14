@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Lancamento } from 'src/app/cor/model';
+import { Lancamento } from 'src/app/core/model';
 import { CategoriaService } from '../../categorias/categoria.service';
-import { ErrorHandlerService } from '../../cor/error-handler.service';
+import { ErrorHandlerService } from '../../core/error-handler.service';
 import { PessoaService } from '../../pessoas/pessoa.service';
 import { LancamentoService } from '../lancamento.service';
 import { MessageService } from 'primeng/api';
