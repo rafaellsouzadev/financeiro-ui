@@ -50,7 +50,7 @@ export class PessoasGridComponent implements OnInit {
   }
 
   excluir(pessoa: any) {
-    this.pessoaService.excluir(pessoa.id)
+    this.pessoaService.excluir(pessoa.codigo)
     .then(() => {
       if (this.grid.first === 0) {
         this.pessoaPesquisa.pesquisar();
@@ -65,7 +65,7 @@ export class PessoasGridComponent implements OnInit {
   mudarStatus(pessoa: any) : void {
     const novoStatus = !pessoa.ativo
 
-    this.pessoaService.mudarStatus(pessoa.id, novoStatus)
+    this.pessoaService.mudarStatus(pessoa.codigo, novoStatus)
     .then(() => {
       const acao = novoStatus ? 'ativada' : 'desativada'
       pessoa.ativo = novoStatus;

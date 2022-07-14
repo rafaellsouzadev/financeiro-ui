@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'lancamentos', pathMatch: 'full'},
   { path: 'lancamentos', component: LancamentoPesquisaComponent},
   { path: 'lancamentos/novo', component: LancamentoCadastroComponent},
-  { path: 'lancamentos/:id', component: LancamentoCadastroComponent},
+  { path: 'lancamentos/:codigo', component: LancamentoCadastroComponent},
   { path: 'pessoas', component: PessoaPesquisaComponent},
   { path: 'pessoas/novo', component: PessoaCadastroComponent},
   { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},

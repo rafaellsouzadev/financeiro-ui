@@ -1,5 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ErrorHandlerService } from 'src/app/cor/error-handler.service';
 import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
+
 
 
 @Component({
@@ -12,7 +15,7 @@ export class LancamentoPesquisaComponent implements OnInit {
 
   filtro = new LancamentoFiltro();
   lancamentos = [];
-
+  
 
   constructor(private lancamentoService: LancamentoService) { }
 
@@ -26,6 +29,7 @@ export class LancamentoPesquisaComponent implements OnInit {
         this.lancamentos = resultado.lancamentos;
       });
   }
+
 
 
 }

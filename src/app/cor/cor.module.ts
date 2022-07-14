@@ -13,6 +13,7 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { RouterModule } from '@angular/router';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { Title } from '@angular/platform-browser';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -35,10 +36,9 @@ registerLocaleData(localePt, 'pt-BR');
   imports: [
     CommonModule,
     RouterModule,
-
+    
     ToastModule,
     ConfirmDialogModule,
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -48,12 +48,14 @@ registerLocaleData(localePt, 'pt-BR');
     }),
   ],
   providers: [
-    DatePipe,
     ErrorHandlerService,
 
     MessageService,
     ConfirmationService,
-    TranslateService
+    TranslateService,
+    Title,
+    DatePipe,
+    {provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })
 export class CorModule { }

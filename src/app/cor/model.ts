@@ -1,8 +1,5 @@
-import * as moment from "moment";
 
-export class Pessoa {
-  id?: number;
-  nome?: string;
+export class Endereco {
   logradouro?: string;
   numero?: string;
   complemento?: string;
@@ -10,33 +7,36 @@ export class Pessoa {
   cep?: string;
   cidade?: string;
   estado?: string;
+}
 
-  ativo: boolean = true;
-
+export class Pessoa {
+  codigo?: number;
+  nome?: string;
+  endereco = new Endereco();
+  ativo = true;
 }
 
 export class Categoria {
-  id?: number; 
-  nome?: string;
+  codigo?: number;  
 }
 
 
 export class Lancamento {
-  id?: number;
+  [x: string]: any;
+  codigo?: number;
   descricao?: string;
-  dataVencimento?: Date;
-  dataPagamento?: Date;
+  dataVencimento!: Date;
+  dataPagamento!: Date;
   valor?: number;
   tipo: string = 'RECEITA';
   observacao?: string;
-  categoria = new Categoria();
   pessoa = new Pessoa();
+  categoria = new Categoria();
+
 
   static toJson(lancamento: Lancamento): any {
     return {
-      ...lancamento,
-      dataVencimento: moment(lancamento.dataVencimento).format('DD/MM/YYYY'),
-      dataPagamento: moment(lancamento.dataPagamento).format('DD/MM/YYYY')
+      ...lancamento      
     };
   }
 }

@@ -50,8 +50,7 @@ import { RouterModule } from '@angular/router';
     DropdownModule,
     InputNumberModule,
     MessagesModule,
-
-    SharedModule
+    SharedModule    
   ]
 })
 export class LancamentosModule { }

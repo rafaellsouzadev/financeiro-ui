@@ -24,8 +24,7 @@ export class PessoaPesquisaComponent implements OnInit {
 
     this.pessoaService.pesquisar(this.filtro)
       .then((dados: any) => {
-        this.pessoas = dados.pessoas;
-        console.log(this.pessoas);
+        this.pessoas = dados.pessoas;        
       })
       .catch((error) => this.errorHandler.handle(error));;
 

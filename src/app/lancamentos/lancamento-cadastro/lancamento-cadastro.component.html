@@ -3,7 +3,7 @@
     <div class="grid">
 
       <div class="col-12">
-        <h1>{{editando ? 'Edição de' : 'Novo'}} Lançamento</h1>
+        <h1>{{editando ? 'Edição de' : 'Novo'}} Lançamento</h1> 
       </div>
 
       <div class="col-12">
@@ -12,8 +12,8 @@
 
       <div class="p-fluid col-6 md:col-3">
         <label>Vencimento</label>
-        <p-calendar dateFormat="dd/mm/yy" [inline]="false" [showIcon]="false"
-        name="vencimento" ngModel #vencimento="ngModel" [required]="true" [(ngModel)]="lancamento.dataVencimento"></p-calendar>
+        <p-calendar dateFormat="dd/mm/yy" [inline]="false" 
+        name="vencimento" id="vencimento" ngModel #vencimento="ngModel" [required]="true" [(ngModel)]="lancamento.dataVencimento"></p-calendar>
 
 
         <app-message [control]="vencimento.control" error="required" text="Informe uma data de vencimento"></app-message>
@@ -22,8 +22,8 @@
 
       <div class="p-fluid col-6 md:col-3">
         <label>{{tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'}}</label>
-        <p-calendar dateFormat="dd/mm/yy" [inline]="false"
-        [showIcon]="false" name="pagamento" ngModel #pagamento="ngModel" [(ngModel)]="lancamento.dataPagamento" ></p-calendar>
+        <p-calendar dateFormat="dd/mm/yy" [inline]="false" 
+         name="pagamento" id="pagamento" ngModel #pagamento="ngModel" [(ngModel)]="lancamento.dataPagamento" ></p-calendar>
       </div>
 
       <div class="p-fluid col-12 md:col-9">
@@ -39,20 +39,20 @@
 
       <div class="p-fluid col-12 md:col-3">
         <label>Valor</label>
-        <p-inputNumber mode="currency" currency="BRL" placeholder="0,00" name="valor" ngModel
+        <p-inputNumber mode="currency" currency="BRL" locale="pt-BR" placeholder="0,00" name="valor" ngModel
         [(ngModel)]="lancamento.valor" [required]="true"></p-inputNumber>
       </div>
 
       <div class="p-fluid col-12 md:col-6">
         <label>Categoria</label>
         <p-dropdown [options]="categorias" placeholder="Selecione" #categoria="ngModel" name="categoria" ngModel="categoria"
-        [(ngModel)]="lancamento.categoria.id" [required]="true"></p-dropdown>
+        [(ngModel)]="lancamento.categoria.codigo" [required]="true"></p-dropdown>
       </div>
     
       <div class="p-fluid col-12 md:col-6">
         <label>Pessoa</label>
         <p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione" #pessoa="ngModel" ngModel name="pessoa"
-        [(ngModel)]="lancamento.pessoa.id" [required]="true"></p-dropdown>
+        [(ngModel)]="lancamento.pessoa.codigo" [required]="true"></p-dropdown>
       </div>
 
       <div class="p-fluid col-12">

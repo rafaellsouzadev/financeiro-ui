@@ -26,7 +26,7 @@ export class LancamentoGridComponent implements OnInit {
     private messageService: MessageService,
     private confimationService: ConfirmationService,
     private errorHandler: ErrorHandlerService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
 
@@ -54,7 +54,7 @@ export class LancamentoGridComponent implements OnInit {
   }
 
   excluir(lancamento: any) {
-    this.lancamentoService.excluir(lancamento.id)
+    this.lancamentoService.excluir(lancamento.codigo)
       .then(() => {
         if (this.grid.first === 0) {
           this.pesquisa.pesquisar();

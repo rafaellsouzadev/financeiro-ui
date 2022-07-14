@@ -9,9 +9,11 @@ import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [
     MessageComponent
+    
   ],
   exports: [
     MessageComponent
+    
   ],
   imports: [
     CommonModule,
