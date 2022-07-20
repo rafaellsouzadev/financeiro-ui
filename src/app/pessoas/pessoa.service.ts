@@ -46,6 +46,14 @@ export class PessoaService {
 
   }
 
+  buscarPorCodigo(codigo: number): Promise<Pessoa> {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=');     
+
+      return this.http.get<Pessoa>(`${this.pessoasUrl}/${codigo}`, { headers })
+        .toPromise();
+  }
+
   listarTodas(): Promise<any> {
     const headers = new HttpHeaders()
       .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=');
@@ -85,6 +93,13 @@ export class PessoaService {
       .toPromise();
   }
 
+  atualizar(pessoa: Pessoa): Promise<Pessoa> {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=')
+      .append('Content-Type', 'application/json');
 
+      return this.http.put<Pessoa>(`${this.pessoasUrl}/${pessoa.codigo}`, pessoa, { headers })
+        .toPromise();
+  }
 
 }

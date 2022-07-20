@@ -27,14 +27,15 @@
       <td class="col-valor">
         <span class="p-column-title">Status</span>
         <a href="javascript:;" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top"
-        [style.color]="pessoa.ativo ? 'blue' : 'red'" (click)="mudarStatus(pessoa)">
+          [style.color]="pessoa.ativo ? 'blue' : 'red'" (click)="mudarStatus(pessoa)">
           {{ pessoa.ativo ? 'Ativo' : 'Inativo' }}
         </a>
       </td>
       <td class="col-acoes">
-        <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+        <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+          [routerLink]="['/pessoas', pessoa.codigo]"></a>
         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
-        (click)="confirmaExclusao(pessoa)"></button>
+          (click)="confirmaExclusao(pessoa)"></button>
       </td>
     </tr>
   </ng-template>

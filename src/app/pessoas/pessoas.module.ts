@@ -15,6 +15,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { RouterModule } from '@angular/router';
+import { PessoasRoutingModule } from './pessoas-routing.module';
 
 
 
@@ -33,8 +34,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule,
-
+    
     TableModule,
     InputTextModule,
     ButtonModule,
@@ -43,7 +43,8 @@ import { RouterModule } from '@angular/router';
     SelectButtonModule,
     DropdownModule,
 
-    SharedModule
+    SharedModule,
+    PessoasRoutingModule
 
   ]
 })
