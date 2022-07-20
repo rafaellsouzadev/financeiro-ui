@@ -17,9 +17,11 @@ export class LancamentoPesquisaComponent implements OnInit {
   lancamentos = [];
   
 
-  constructor(private lancamentoService: LancamentoService) { }
+  constructor(private lancamentoService: LancamentoService,
+              private title: Title, private errorHandler: ErrorHandlerService) { }
 
   ngOnInit() {
+    this.title.setTitle('Pesquisa de Lançamentos')
   }
 
   pesquisar(pagina = 0): void {
@@ -27,7 +29,7 @@ export class LancamentoPesquisaComponent implements OnInit {
     this.lancamentoService.pesquisar(this.filtro)
       .then(resultado => {
         this.lancamentos = resultado.lancamentos;
-      });
+      }).catch((error) => this.errorHandler.handle(error));
   }
 
 

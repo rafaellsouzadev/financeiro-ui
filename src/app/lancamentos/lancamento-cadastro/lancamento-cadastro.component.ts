@@ -40,7 +40,8 @@ export class LancamentoCadastroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    
+    
     const codigoLancamento = this.route.snapshot.params['codigo'];
 
     if (codigoLancamento) {
@@ -59,9 +60,9 @@ export class LancamentoCadastroComponent implements OnInit {
   carregarLancamento(codigo: number) {
     this.lancamentoService.buscarPorCodigo(codigo)
       .then(lancamento => {
-
         this.lancamento = lancamento;
-        console.log(lancamento);
+        this.atualizarTituloEdicao();
+        
       })
       .catch(error => this.errorHandler.handle(error));
   }
@@ -110,6 +111,7 @@ export class LancamentoCadastroComponent implements OnInit {
 
         this.lancamento = response;
         this.messageService.add({ severity: 'success', detail: 'Lançamento alterado com sucesso!' });
+        this.atualizarTituloEdicao();
         this.router.navigate(['/lancamentos'])
       },
         (error: any) => {

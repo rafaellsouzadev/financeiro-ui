@@ -6,7 +6,6 @@ import { LancamentoGridComponent } from './lancamento-grid/lancamento-grid.compo
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
-import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { ButtonModule } from 'primeng/button';
 import { SelectButtonModule } from 'primeng/selectbutton';
@@ -18,7 +17,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'primeng/tooltip';
-import { RouterModule } from '@angular/router';
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
 
 
 
@@ -34,8 +33,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule,
+    HttpClientModule,   
 
     InputTextModule,
     ButtonModule,
@@ -47,7 +45,8 @@ import { RouterModule } from '@angular/router';
     DropdownModule,
     InputNumberModule,
     MessagesModule,
-    SharedModule    
+    SharedModule,
+    LancamentosRoutingModule
   ]
 })
 export class LancamentosModule { }
