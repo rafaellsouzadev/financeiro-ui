@@ -27,13 +27,13 @@ export class PessoaCadastroComponent implements OnInit {
 
   ngOnInit(): void {
     const codigoPessoa = this.route.snapshot.params['codigo']
-    console.log(codigoPessoa);
-
+    
     if (codigoPessoa) {
       this.carregarPessoas(codigoPessoa);
     };
 
     this.title.setTitle('Cadastro de Pessoa')
+        
   }
 
   get editando() {

@@ -3,7 +3,7 @@
     <div class="grid">
 
       <div class="col-12">
-        <h1>{{editando ? 'Edição de' : 'Novo'}} Pessoa</h1>
+        <h1>{{editando ? 'Edição de' : 'Nova'}} Pessoa</h1>
       </div>
 
 
@@ -96,7 +96,8 @@
       <div class="col-12">
         <button pButton type="submit" label="Salvar" icon="pi pi-check" iconPos="left"
           [disabled]="form.invalid"></button>
-        <button pButton type="button" label="Novo" class="p-button-info ml-2" icon="pi pi-user-plus"></button>
+        <button pButton type="button" label="Novo" class="p-button-info ml-2" icon="pi pi-user-plus"
+        [routerLink]="['/pessoas/novo']"></button>
         <a class="ml-2" routerLink="/pessoas">Voltar para a pesquisa</a>
       </div>
 
