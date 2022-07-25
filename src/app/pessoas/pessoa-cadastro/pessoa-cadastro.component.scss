@@ -1,0 +1,658 @@
+@media (min-width: 1285px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 5vh;
+            height: 150vh;
+            width: 170vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 1284px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 150vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 1173px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 140vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 1110px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 130vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 1040px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 120vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 966px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 110vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 890px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 100vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 823px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 150vh;
+            width: 90vh;
+
+        }
+
+        &__voltar {
+            color: var(--mac-grey);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100vh;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 100%;
+            width: 80vh;
+
+        }
+
+        &__voltar {
+            color: var(--dark-1);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 675px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100%;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 100%;
+            width: 70vh;
+
+        }
+
+        &__voltar {
+            color: var(--dark-1);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 603px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100%;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 100%;
+            width: 60vh;
+
+        }
+
+        &__voltar {
+            color: var(--dark-1);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+
+@media (max-width: 528px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100%;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 100%;
+            width: 50vh;
+
+        }
+
+        &__voltar {
+            color: var(--dark-1);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+
+@media (max-width: 458px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100%;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .25em
+        }
+
+        &__conteiner {
+            position: relative;
+            margin-right: 10vh;
+            height: 100%;
+            width: 40vh;
+
+        }
+
+        &__voltar {
+            color: var(--dark-1);
+            text-decoration: none;
+        }
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 415px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100%;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            margin-right: .0em;
+            margin-left: .0em;
+        }
+
+        &__conteiner {
+            margin-right: 0vh;
+            height: 100%;
+            width: 43vh;
+
+        }
+
+        &__voltar {
+            color: var(--grey-0);
+            text-decoration: none;
+            text-align: justify;
+            font-size: 18px;
+            padding: -2px;
+            
+        }
+
+       
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}
+
+
+@media (max-width: 376px) {
+    @import 'helpers';
+
+    ::ng-deep.pessoa-screen {
+        @include bg-image($uri: '/assets/desktop-background.jpg', $size: cover, $position: center);
+        @include flex($dir: column, $ai: center, $jc: center);
+
+
+        height: 100%;
+        color: var(--light-0);
+        position: relative;
+
+        .input {
+            width: 100px;
+        }
+
+        .p-button {
+            
+            margin-right: .1em;
+            margin-left: .0em;
+        }
+
+        &__conteiner {
+            margin-right: 0vh;
+            height: 100%;
+            width: 53vh;
+
+        }
+
+        &__voltar {
+            color: var(--grey-0);
+            text-decoration: none;
+            text-align: justify;
+            font-size: 16px;
+            padding: -2px;
+            
+        }
+
+
+        @media (max-width: 537px) {
+            label {
+                display: flex;
+            }
+        }
+
+    }
+
+}

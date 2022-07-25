@@ -8,7 +8,7 @@ import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
 @Component({
   selector: 'app-lancamento-pesquisa',
   templateUrl: './lancamento-pesquisa.component.html',
-  styleUrls: ['./lancamento-pesquisa.component.css']
+  styleUrls: ['./lancamento-pesquisa.component.scss']
 })
 export class LancamentoPesquisaComponent implements OnInit {
 

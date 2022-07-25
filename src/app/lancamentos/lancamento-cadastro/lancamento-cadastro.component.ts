@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-lancamento-cadastro',
   templateUrl: './lancamento-cadastro.component.html',
-  styleUrls: ['./lancamento-cadastro.component.css']
+  styleUrls: ['./lancamento-cadastro.component.scss']
 })
 export class LancamentoCadastroComponent implements OnInit {
 

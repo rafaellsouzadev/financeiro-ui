@@ -1,8 +1,0 @@
-input {
-  width: 100px;
-}
-@media (max-width: 537px) {
-  label {
-      display: flex;
-  }
-}

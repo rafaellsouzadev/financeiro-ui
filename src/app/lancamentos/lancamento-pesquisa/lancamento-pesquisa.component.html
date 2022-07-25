@@ -1,42 +1,44 @@
-<div class="container">
-  <div class="p-grid">
+<div class="lancamento-screen">
+  <div class="lancamento-screen__conteiner">
+    <div class="p-grid">
 
-    <form autocomplete="off" (ngSubmit)="pesquisar()">
+      <form autocomplete="off" (ngSubmit)="pesquisar()">
 
-      <div class="p-col-12">
-        <h1>Lançamento</h1>
+        <div class="p-col-12">
+          <h1>Lançamento</h1>
+        </div>
+
+        <div class="p-col-12 p-fluid">
+          <label>Descrição</label>
+          <input pInputText class="mt-1" type="text" name="descricao" [(ngModel)]="filtro.descricao">
+        </div>
+
+        <div class="p-col-12 mt-2">
+          <label style="display: block">Vencimento</label>
+          <p-calendar dateFormat="dd/mm/yy" [showIcon]="true" inputId="icon" name="dataVencimentoInicio"
+            [(ngModel)]="filtro.dataVencimentoInicio"></p-calendar>
+
+          <label class="label p-col-12 p-grid">até</label>
+          <p-calendar dateFormat="dd/mm/yy" [showIcon]="true" inputId="icon" name="dataVencimentoFim"
+            [(ngModel)]="filtro.dataVencimentoFim"></p-calendar>
+        </div>
+
+        <div class="p-col-12 mt-2">
+          <button pButton type="submit" label="Pesquisar"></button>
+        </div>
+
+      </form>
+
+      <div class="p-grid mt-3">
+        <div class="p-col-12">
+          <app-lancamento-grid [lancamentos]="lancamentos"></app-lancamento-grid>
+        </div>
       </div>
 
-      <div class="p-col-12 p-fluid">
-        <label>Descrição</label>
-        <input pInputText class="mt-1" type="text" name="descricao" [(ngModel)]="filtro.descricao">
+      <div class="p-col-12 mt-3">
+        <a pButton label="Novo Lançamento" routerLink="/lancamentos/novo"></a>
       </div>
 
-      <div class="p-col-12 mt-2">
-        <label style="display: block">Vencimento</label>
-        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"  inputId="icon" 
-        name="dataVencimentoInicio" [(ngModel)]="filtro.dataVencimentoInicio"></p-calendar>
-
-        <label class="label p-col-12 p-grid">até</label>
-        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"  inputId="icon" 
-        name="dataVencimentoFim" [(ngModel)]="filtro.dataVencimentoFim"></p-calendar>
-      </div>
-
-      <div class="p-col-12 mt-2">
-        <button pButton type="submit" label="Pesquisar"></button>
-      </div>
-
-    </form>
-
-    <div class="p-grid mt-3">
-      <div class="p-col-12">
-        <app-lancamento-grid [lancamentos]="lancamentos"></app-lancamento-grid>
-      </div>
     </div>
-
-    <div class="p-col-12 mt-3">
-      <a pButton label="Novo Lançamento" routerLink="/lancamentos/novo"></a>
-    </div>
-
   </div>
 </div>

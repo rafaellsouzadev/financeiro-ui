@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { Lancamento } from '../core/model';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
+import { ErrorHandlerService } from '../core/error-handler.service';
 
 
 
@@ -24,13 +25,15 @@ export class LancamentoService {
   salvarLancamento: any;
 
   constructor(private http: HttpClient,
-    private datePipe: DatePipe) { }
+    private datePipe: DatePipe,
+    private errorHandler: ErrorHandlerService) { }
 
   pesquisar(filtro: LancamentoFiltro): Promise<any> {
     
     const headers = new HttpHeaders()
       .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=')
-      .append('Content-Type', 'application/json');      
+      .append('Content-Type', 'application/json');
+            
 
       let params = new HttpParams()
                       .set('page', filtro.pagina)
@@ -62,7 +65,7 @@ export class LancamentoService {
        
         return resultado;
         
-      });
+      }).catch((error) => this.errorHandler.handle(error));
   }
 
   excluir(codigo: number): Promise<void> {

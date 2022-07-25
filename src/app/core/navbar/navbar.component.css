@@ -37,8 +37,9 @@
 }
 
 .navbar-menuitem a {
-  color: #35312f;
+  color: var(--dark-1);    
   text-decoration: none;
+  font-size: 18px;
 }
 
 .navbar-menuitem a:hover {

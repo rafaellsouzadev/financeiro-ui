@@ -6,7 +6,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-pessoa-pesquisa',
   templateUrl: './pessoa-pesquisa.component.html',
-  styleUrls: ['./pessoa-pesquisa.component.css']
+  styleUrls: ['./pessoa-pesquisa.component.scss']
 })
 export class PessoaPesquisaComponent implements OnInit {
 

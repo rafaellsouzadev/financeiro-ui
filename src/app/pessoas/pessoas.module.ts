@@ -14,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { RouterModule } from '@angular/router';
 import { PessoasRoutingModule } from './pessoas-routing.module';
 
 

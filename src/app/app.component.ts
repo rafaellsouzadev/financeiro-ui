@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -11,9 +13,12 @@ export class AppComponent  implements OnInit{
 
 
 
-  constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(private primengConfig: PrimeNGConfig, private translateService: TranslateService, private router: Router) {}
 
   ngOnInit() {
+    this.translateService.setDefaultLang('pt');
+    this.translateService.get('primeng')
+      .subscribe(res => this.primengConfig.setTranslation(res));
     this.primengConfig.ripple = true;
   }
 

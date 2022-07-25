@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-pessoa-cadastro',
   templateUrl: './pessoa-cadastro.component.html',
-  styleUrls: ['./pessoa-cadastro.component.css']
+  styleUrls: ['./pessoa-cadastro.component.scss']
 })
 export class PessoaCadastroComponent implements OnInit {
 

@@ -53,6 +53,7 @@ registerLocaleData(localePt, 'pt-BR');
     MessageService,
     ConfirmationService,
     TranslateService,
+    
     Title,
     DatePipe,
     {provide: LOCALE_ID, useValue: 'pt-BR' }
