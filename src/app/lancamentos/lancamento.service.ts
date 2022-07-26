@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { Lancamento } from '../core/model';
 import { Observable } from 'rxjs';
-import * as moment from 'moment';
 import { ErrorHandlerService } from '../core/error-handler.service';
 
 
@@ -29,21 +28,21 @@ export class LancamentoService {
     private errorHandler: ErrorHandlerService) { }
 
   pesquisar(filtro: LancamentoFiltro): Promise<any> {
-    
+
     const headers = new HttpHeaders()
       .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=')
       .append('Content-Type', 'application/json');
-            
 
-      let params = new HttpParams()
-                      .set('page', filtro.pagina)
-                      .set('size', filtro.itensPorPagina);
-    
+
+    let params = new HttpParams()
+      .set('page', filtro.pagina)
+      .set('size', filtro.itensPorPagina);
+
 
     if (filtro.descricao) {
       params = params.set('descricao', filtro.descricao);
-    }   
-    
+    }
+
     if (filtro.dataVencimentoInicio) {
       params = params.set('dataVencimentoDe', this.datePipe.transform(filtro.dataVencimentoInicio, 'yyyy-MM-dd')!);
     }
@@ -54,17 +53,17 @@ export class LancamentoService {
 
     return this.http.get(`${this.lancamentosUrl}?resumo`, { headers, params })
       .toPromise()
-      .then((response : any) => {        
+      .then((response: any) => {
         const lancamentos = response['content'];
-        
+
 
         const resultado = {
           lancamentos,
           total: response['totalElements']
         };
-       
+
         return resultado;
-        
+
       }).catch((error) => this.errorHandler.handle(error));
   }
 
@@ -86,8 +85,8 @@ export class LancamentoService {
       .toPromise();
   }
 
-  atualizar(lancamento: Lancamento):  Observable<any> {
-    const headers = new HttpHeaders({Authorization: "Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=", "Content-Type": "application/json" });
+  atualizar(lancamento: Lancamento): Observable<any> {
+    const headers = new HttpHeaders({ Authorization: "Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=", "Content-Type": "application/json" });
     return this.http.put(`${this.lancamentosUrl}/${lancamento.codigo}`, JSON.stringify(lancamento), { headers });
   }
 
@@ -109,7 +108,7 @@ export class LancamentoService {
     for (const lancamento of lancamentos) {
       //Evita bug na hora da edição, adiciona o timezone do usuário
       let offset = new Date().getTimezoneOffset() * 60000;
-      
+
       lancamento.dataVencimento = new Date(new Date(lancamento.dataVencimento).getTime() + offset);
 
       if (lancamento.dataPagamento) {
@@ -117,6 +116,6 @@ export class LancamentoService {
       }
     }
   }
-  
+
 
 }
