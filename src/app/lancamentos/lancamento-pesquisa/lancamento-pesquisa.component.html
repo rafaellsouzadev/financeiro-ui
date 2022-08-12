@@ -36,7 +36,7 @@
       </div>
 
       <div class="p-col-12 mt-3">
-        <a pButton label="Novo Lançamento" routerLink="/lancamentos/novo"></a>
+        <a pButton label="Novo Lançamento" routerLink="/lancamentos/novo" *ngIf="temPermissao('ROLE_CADASTRAR_LANCAMENTO')"></a>
       </div>
 
     </div>

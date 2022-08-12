@@ -1,27 +1,28 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule, DatePipe, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Title } from '@angular/platform-browser';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
-
+import { RouterModule } from '@angular/router';
 import localePt from '@angular/common/locales/pt';
-import { ErrorHandlerService } from './error-handler.service';
+
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
-import { RouterModule } from '@angular/router';
+import { ConfirmationService } from 'primeng/api';
+
+import { ErrorHandlerService } from './error-handler.service';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
-import { Title } from '@angular/platform-browser';
 import { AuthService } from '../seguranca/auth.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { NavbarComponent } from './navbar/navbar.component';
+
+registerLocaleData(localePt, 'pt-BR');
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
 
-registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -55,8 +56,7 @@ registerLocaleData(localePt, 'pt-BR');
     MessageService,
     ConfirmationService,
     TranslateService,
-    AuthService,
-    JwtHelperService,
+    AuthService,   
     
     Title,
     DatePipe,

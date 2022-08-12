@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { ErrorHandlerService } from '../core/error-handler.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +11,7 @@ export class AuthService {
   oauthTokenUrl = 'http://localhost:8080/oauth/token'
   jwtPayload: any;
 
-  constructor(private http: HttpClient,
-              private errorHandler: ErrorHandlerService,
+  constructor(private http: HttpClient,              
               private jwtHelper: JwtHelperService,
               private router: Router) { 
                 this.carregarToken();
@@ -26,10 +24,9 @@ export class AuthService {
 
     const body = `username=${usuario}&password=${senha}&grant_type=password`;
 
-    return this.http.post(`${this.oauthTokenUrl}`, body, { headers })
+    return this.http.post(`${this.oauthTokenUrl}`, body, { headers, withCredentials: true })
       .toPromise()
-      .then((response:any) => {
-        console.log(response);
+      .then((response:any) => {        
         this.armazenarToken(response['access_token'])
       }).catch(response => {
         if (response.status === 400) {
@@ -40,6 +37,10 @@ export class AuthService {
 
         return Promise.reject(response);
       });
+  }
+
+  temPermissao(permissao: string) {
+    return this.jwtPayload && this.jwtPayload.authorities.includes(permissao);
   }
 
   private armazenarToken(token: string) {
@@ -63,5 +64,28 @@ export class AuthService {
     return this.router.url == '/login'
   }
 
+  obterNovoAccessToken(): Promise<void | null> {
+    const headers = new HttpHeaders()
+    .append('Content-Type', 'application/x-www-form-urlencoded')
+    .append('Authorization', 'Basic YW5ndWxhcjpAbmd1bEByMA==');
+
+    const body = 'grant_type=refresh_token';
+
+    return this.http.post(this.oauthTokenUrl, body, { headers, withCredentials: true })
+    .toPromise()
+    .then((response: any) => {
+      this.armazenarToken(response['access_token'])
+
+      console.log('Novo Access token criado! ' );
+
+      return Promise.resolve(null);
+    })
+    .catch(response => {
+      console.error('Erro ao renovar o token.', response);
+      return Promise.resolve(null);
+    })
+  }
+
+ 
   
 }

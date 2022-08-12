@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
+import { AuthService } from 'src/app/seguranca/auth.service';
 import { LancamentoService, LancamentoFiltro } from '../lancamento.service';
 
 
@@ -18,7 +19,9 @@ export class LancamentoPesquisaComponent implements OnInit {
   
 
   constructor(private lancamentoService: LancamentoService,
-              private title: Title, private errorHandler: ErrorHandlerService) { }
+              private title: Title, 
+              private errorHandler: ErrorHandlerService,
+              private auth: AuthService) { }
 
   ngOnInit() {
     this.title.setTitle('Pesquisa de Lançamentos')
@@ -32,6 +35,8 @@ export class LancamentoPesquisaComponent implements OnInit {
       }).catch((error) => this.errorHandler.handle(error));
   }
 
-
+  temPermissao(permissao: string) {
+    return this.auth.temPermissao(permissao);
+  }
 
 }

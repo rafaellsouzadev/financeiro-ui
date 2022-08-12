@@ -28,12 +28,6 @@ export class LancamentoService {
     private errorHandler: ErrorHandlerService) { }
 
   pesquisar(filtro: LancamentoFiltro): Promise<any> {
-
-    const headers = new HttpHeaders()
-      .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=')
-      .append('Content-Type', 'application/json');
-
-
     let params = new HttpParams()
       .set('page', filtro.pagina)
       .set('size', filtro.itensPorPagina);
@@ -51,7 +45,7 @@ export class LancamentoService {
       params = params.set('dataVencimentoAte', this.datePipe.transform(filtro.dataVencimentoFim, 'yyyy-MM-dd')!);
     }
 
-    return this.http.get(`${this.lancamentosUrl}?resumo`, { headers, params })
+    return this.http.get(`${this.lancamentosUrl}?resumo`, { params })
       .toPromise()
       .then((response: any) => {
         const lancamentos = response['content'];
@@ -67,18 +61,14 @@ export class LancamentoService {
       }).catch((error) => this.errorHandler.handle(error));
   }
 
-  excluir(codigo: number): Promise<void> {
-    const headers = new HttpHeaders()
-      .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=');
-
-    return this.http.delete<void>(`${this.lancamentosUrl}/${codigo}`, { headers })
+  excluir(codigo: number): Promise<void> {    
+    return this.http.delete<void>(`${this.lancamentosUrl}/${codigo}`)
       .toPromise()
 
   }
 
   adicionar(lancamento: Lancamento): Promise<Lancamento> {
-    const headers = new HttpHeaders()
-      .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=')
+    const headers = new HttpHeaders()    
       .append('Content-Type', 'application/json');
 
     return this.http.post<Lancamento>(this.lancamentosUrl, lancamento, { headers })
@@ -86,13 +76,12 @@ export class LancamentoService {
   }
 
   atualizar(lancamento: Lancamento): Observable<any> {
-    const headers = new HttpHeaders({ Authorization: "Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=", "Content-Type": "application/json" });
+    const headers = new HttpHeaders({"Content-Type": "application/json" });
     return this.http.put(`${this.lancamentosUrl}/${lancamento.codigo}`, JSON.stringify(lancamento), { headers });
   }
 
   buscarPorCodigo(codigo: number): Promise<Lancamento> {
-    const headers = new HttpHeaders()
-      .append('Authorization', 'Basic YWRtaW5AcmFmYWVsLmNvbTpBbHVjYXJkNCM=')
+    const headers = new HttpHeaders()     
       .append('Content-Type', 'application/json');
 
     return this.http.get<Lancamento>(`${this.lancamentosUrl}/${codigo}`, { headers })

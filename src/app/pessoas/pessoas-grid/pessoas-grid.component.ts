@@ -4,6 +4,7 @@ import { LazyLoadEvent, ConfirmationService, MessageService } from 'primeng/api'
 import { PessoaPesquisaComponent } from '../pessoa-pesquisa/pessoa-pesquisa.component';
 import { Table } from 'primeng/table';
 import { ErrorHandlerService } from '../../core/error-handler.service';
+import { AuthService } from 'src/app/seguranca/auth.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class PessoasGridComponent implements OnInit {
              private pessoaPesquisa: PessoaPesquisaComponent,
              private confimationService: ConfirmationService,
              private messageService: MessageService,
-             private errorHandler: ErrorHandlerService) { }
+             private errorHandler: ErrorHandlerService,
+             private auth: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -73,6 +75,10 @@ export class PessoasGridComponent implements OnInit {
 
     })
     .catch((error) => this.errorHandler.handle(error));
+  }
+
+  temPermissao(permissao: string) {
+    return this.auth.temPermissao(permissao);
   }
 
 }

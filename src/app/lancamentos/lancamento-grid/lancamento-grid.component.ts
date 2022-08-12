@@ -4,6 +4,7 @@ import { LancamentoFiltro, LancamentoService } from '../lancamento.service';
 import { LancamentoPesquisaComponent } from '../lancamento-pesquisa/lancamento-pesquisa.component';
 import { Table } from 'primeng/table';
 import { ErrorHandlerService } from '../../core/error-handler.service';
+import { AuthService } from 'src/app/seguranca/auth.service';
 
 
 
@@ -26,6 +27,7 @@ export class LancamentoGridComponent implements OnInit {
     private messageService: MessageService,
     private confimationService: ConfirmationService,
     private errorHandler: ErrorHandlerService,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -66,6 +68,10 @@ export class LancamentoGridComponent implements OnInit {
       })
       .catch((error) => this.errorHandler.handle(error));
 
+  }
+
+  temPermissao(permissao: string) {
+    return this.auth.temPermissao(permissao);
   }
 
 }
