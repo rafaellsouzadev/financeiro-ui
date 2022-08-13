@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,12 +9,11 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  oauthTokenUrl = 'http://localhost:8080/oauth/token'
+  oauthTokenUrl = environment.apiUrl + '/oauth/token';
   jwtPayload: any;
 
   constructor(private http: HttpClient,              
-              private jwtHelper: JwtHelperService,
-              private router: Router) { 
+              private jwtHelper: JwtHelperService) { 
                 this.carregarToken();
               }
 
@@ -55,14 +54,12 @@ export class AuthService {
     if(token) {
       this.armazenarToken(token);
     }
-    if(this.limparLocalStorage()) {
-      localStorage.clear();
-    }
 
   }
 
-  limparLocalStorage() {
-    return this.router.url == '/login'
+  limparAccessToken() {
+    localStorage.removeItem('token');
+    this.jwtPayload = null;   
   }
 
   obterNovoAccessToken(): Promise<void | null> {

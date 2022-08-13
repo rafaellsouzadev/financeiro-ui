@@ -12,6 +12,7 @@ import { SegurancaRoutingModule } from "./seguranca-routing.module";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { MoneyHttpInterceptorService } from "./money-http-interceptor.service";
 import { AuthGuard } from "./auth.guard";
+import { environment } from "src/environments/environment";
 
 export function tokenGetter(): string {
   return localStorage.getItem('token')!;
@@ -23,13 +24,13 @@ export function tokenGetter(): string {
         LoginFormComponent
     ],
     imports: [
-        JwtModule.forRoot({
-            config: {
-              tokenGetter,
-              allowedDomains: ['localhost:8080'],
-              disallowedRoutes: ['http://localhost:8080/oauth/token'],
-            }
-          }),
+      JwtModule.forRoot({
+        config: {
+          tokenGetter,
+          allowedDomains: environment.tokenAllowedDomains,
+          disallowedRoutes: environment.tokenDisallowedRoutes
+        }
+      }),
         BrowserAnimationsModule,
         CommonModule,
         FormsModule,
