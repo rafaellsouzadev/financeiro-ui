@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -86,6 +87,20 @@ export class AuthService {
     })
   }
 
+  isAccessTokenInvalido() {
+    const token = localStorage.getItem('token');
+
+    return !token || this.jwtHelper.isTokenExpired(token);
+  }
+
+  temQualquerPermissao(roles: any) {
+    for (const role of roles) {
+      if (this.temPermissao(role)) {
+        return true;
+      }
+    }
+    return false
+  }
  
   
 }

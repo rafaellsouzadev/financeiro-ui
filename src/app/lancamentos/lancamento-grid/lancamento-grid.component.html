@@ -8,7 +8,7 @@
       <th class="col-data-header">Vencimento</th>
       <th class="col-data-header">Pagamento</th>
       <th class="col-valor-header">Valor</th>
-      <th *ngIf="temPermissao('ROLE_CADASTRAR_LANCAMENTO') && temPermissao('ROLE_REMOVER_LANCAMENTO')"></th>
+      <th *ngIf="temPermissao('ROLE_CADASTRAR_LANCAMENTO') || temPermissao('ROLE_REMOVER_LANCAMENTO')"></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-lancamento>
@@ -34,7 +34,7 @@
         <span [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lancamento.valor | currency:
           'BRL'}}</span>
       </td>
-      <td class="col-acoes" *ngIf="temPermissao('ROLE_CADASTRAR_LANCAMENTO') && temPermissao('ROLE_REMOVER_LANCAMENTO')">
+      <td class="col-acoes" *ngIf="temPermissao('ROLE_CADASTRAR_LANCAMENTO') || temPermissao('ROLE_REMOVER_LANCAMENTO')">
         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
           [routerLink]="['/lancamentos', lancamento.codigo]"></a>
         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"

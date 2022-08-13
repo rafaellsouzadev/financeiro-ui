@@ -9,6 +9,9 @@ import { InputTextModule } from "primeng/inputtext";
 
 import { LoginFormComponent } from "./login-form/login-form.component";
 import { SegurancaRoutingModule } from "./seguranca-routing.module";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { MoneyHttpInterceptorService } from "./money-http-interceptor.service";
+import { AuthGuard } from "./auth.guard";
 
 export function tokenGetter(): string {
   return localStorage.getItem('token')!;
@@ -36,6 +39,13 @@ export function tokenGetter(): string {
 
         SegurancaRoutingModule
     ],
-    providers: [JwtHelperService]
+    providers: [JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MoneyHttpInterceptorService,
+      multi: true
+    },
+    AuthGuard
+    ]
 })
 export class SegurancaModule { }

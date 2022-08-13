@@ -16,6 +16,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import { AuthService } from '../seguranca/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NaoAutorizadoComponent } from './nao-autorizado.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -27,7 +28,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     NavbarComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    NaoAutorizadoComponent
   ],
   exports: [
     NavbarComponent,

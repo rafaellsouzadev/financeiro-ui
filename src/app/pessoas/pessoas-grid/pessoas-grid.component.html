@@ -7,7 +7,7 @@
       <th>Cidade</th>
       <th class="col-data-header">Estado</th>
       <th class="col-data-header">Status</th>
-      <th *ngIf="temPermissao('ROLE_CADASTRAR_PESSOA') && temPermissao('ROLE_REMOVER_PESSOA')" ></th>
+      <th *ngIf="temPermissao('ROLE_CADASTRAR_PESSOA') || temPermissao('ROLE_REMOVER_PESSOA')" ></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-pessoa>
@@ -31,7 +31,7 @@
           {{ pessoa.ativo ? 'Ativo' : 'Inativo' }}
         </a>
       </td>
-      <td class="col-acoes" *ngIf="temPermissao('ROLE_CADASTRAR_PESSOA') && temPermissao('ROLE_REMOVER_PESSOA')" >
+      <td class="col-acoes" *ngIf="temPermissao('ROLE_CADASTRAR_PESSOA') || temPermissao('ROLE_REMOVER_PESSOA')" >
         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
           [routerLink]="['/pessoas', pessoa.codigo]" ></a>
         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
