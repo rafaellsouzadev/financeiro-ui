@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { Lancamento } from '../core/model';
 import { Observable } from 'rxjs';
 import { ErrorHandlerService } from '../core/error-handler.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -20,12 +21,13 @@ export class LancamentoFiltro {
 })
 export class LancamentoService {
 
-  lancamentosUrl = 'http://localhost:8080/lancamentos';
-  salvarLancamento: any;
-
+  lancamentosUrl!: string;
+  
   constructor(private http: HttpClient,
     private datePipe: DatePipe,
-    private errorHandler: ErrorHandlerService) { }
+    private errorHandler: ErrorHandlerService) {
+      this.lancamentosUrl = `${environment.apiUrl}/lancamentos`
+     }
 
   pesquisar(filtro: LancamentoFiltro): Promise<any> {
     let params = new HttpParams()
